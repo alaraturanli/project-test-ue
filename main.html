@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --text: #e8e6e1;
+    --muted: #9a9ca3;
+    --accent: #e4572e;
+    --line: #2a2e38;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  header {
+    padding: 6rem 1.5rem 4rem;
+    max-width: 860px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-family: system-ui, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.1;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+  }
+  .lede { font-size: 1.2rem; color: var(--muted); max-width: 640px; }
+  main { max-width: 860px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+  section { margin-bottom: 3.5rem; }
+  h2 {
+    font-family: system-ui, sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: var(--muted);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .card {
+    background: var(--panel);
+    padding: 1.75rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .card:hover { background: #1d212a; }
+  .card .num {
+    font-family: system-ui, sans-serif;
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .card h3 { font-weight: normal; font-size: 1.35rem; margin-bottom: 0.5rem; }
+  .card p { color: var(--muted); font-size: 0.98rem; }
+  .card .more {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+  .card.open .more { max-height: 300px; margin-top: 0.75rem; }
+  .card .hint {
+    font-family: system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-top: 0.75rem;
+  }
+  .card.open .hint { display: none; }
+  .scale { border-left: 2px solid var(--accent); padding-left: 1.5rem; }
+  .scale div { margin-bottom: 1.25rem; }
+  .scale strong { display: block; font-weight: normal; font-size: 1.15rem; }
+  .scale span { color: var(--muted); }
+  ul.actions { list-style: none; }
+  ul.actions li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 1rem;
+  }
+  ul.actions li::before { content: "→"; color: var(--accent); }
+  blockquote {
+    font-size: 1.4rem;
+    font-style: italic;
+    padding: 2rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
+  }
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">A briefing</div>
+  <h1>The Dangers of Artificial Intelligence with Alara
+
+  </h1>
+  <p class="lede">AI systems are becoming more capable, more widespread and more embedded in daily life. Alongside real benefits come real risks — some already here, others still on the horizon.</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>Key risks</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Misinformation</h3>
+        <p>Convincing fake text, images, audio and video at scale.</p>
+        <div class="more">Deepfakes and synthetic content can erode trust in what we see and hear, disrupt elections, and make it harder to tell truth from fabrication.</div>
+        <div class="hint">Tap to expand</div>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Bias &amp; discrimination</h3>
+        <p>Models can absorb and amplify unfair patterns in their data.</p>
+        <div class="more">When used in hiring, lending, policing or healthcare, biased systems can quietly disadvantage groups of people while appearing objective.</div>
+        <div class="hint">Tap to expand</div>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Privacy &amp; surveillance</h3>
+        <p>Powerful tools for tracking, profiling and identifying people.</p>
+        <div class="more">Facial recognition and large-scale data analysis can enable monitoring of individuals and populations far beyond what was previously possible.</div>
+        <div class="hint">Tap to expand</div>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <h3>Job disruption</h3>
+        <p>Automation may displace work faster than societies adapt.</p>
+        <div class="more">Cognitive and creative tasks are increasingly automatable, raising questions about income, retraining and how economic gains are shared.</div>
+        <div class="hint">Tap to expand</div>
+      </div>
+      <div class="card">
+        <div class="num">05</div>
+        <h3>Security &amp; misuse</h3>
+        <p>AI can lower the barrier for scams, cyberattacks and worse.</p>
+        <div class="more">Bad actors may use AI to automate phishing, find software vulnerabilities, or seek help with dangerous weapons — making safeguards essential.</div>
+        <div class="hint">Tap to expand</div>
+      </div>
+      <div class="card">
+        <div class="num">06</div>
+        <h3>Loss of control</h3>
+        <p>Advanced systems might pursue goals we didn't intend.</p>
+        <div class="more">As AI becomes more autonomous, ensuring it reliably does what humans want — the "alignment problem" — becomes one of the field's central challenges.</div>
+        <div class="hint">Tap to expand</div>
+      </div>
+      <div class="card">
+        <div class="num">07</div>
+        <h3>Concentration of power</h3>
+        <p>A few actors could gain outsized economic or political influence.</p>
+        <div class="more">Frontier AI requires enormous resources, which may concentrate capability in a handful of companies or governments with limited accountability.</div>
+        <div class="hint">Tap to expand</div>
+      </div>
+      <div class="card">
+        <div class="num">08</div>
+        <h3>Over-reliance</h3>
+        <p>Trusting AI outputs without checking can cause real harm.</p>
+        <div class="more">AI can be confidently wrong. Dependence on it may also weaken human skills, judgment and critical thinking over time.</div>
+        <div class="hint">Tap to expand</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>A spectrum of concern</h2>
+    <div class="scale">
+      <div><strong>Present harms</strong><span>Bias, scams, deepfakes and privacy violations happening today.</span></div>
+      <div><strong>Near-term risks</strong><span>Labour disruption, cyber threats and erosion of shared information.</span></div>
+      <div><strong>Long-term risks</strong><span>Highly autonomous systems acting beyond meaningful human oversight.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What can be done</h2>
+    <ul class="actions">
+      <li>Invest in safety and alignment research alongside capability research.</li>
+      <li>Build transparency, testing and independent auditing into AI development.</li>
+      <li>Develop thoughtful regulation and international cooperation.</li>
+      <li>Improve public AI literacy so people can question what they see.</li>
+      <li>Keep humans accountable for high-stakes decisions.</li>
+    </ul>
+  </section>
+
+  <blockquote>The goal isn't to fear AI, but to shape it — so its benefits are broad and its risks are managed.</blockquote>
+
+</main>
+
+<footer>The Dangers of AI alalal · An informational overview</footer>
+
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('open'));
+  });
+</script>
+
+</body>
+</html>
